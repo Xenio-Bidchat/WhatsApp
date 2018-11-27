@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".chat-content").click(function(){
+				$(".chat-content").removeClass("change-color")
+				$(this).addClass("change-color");
+			});
+
+			$(".new-chat, .profile-details-header .profile-pic").click(function(){
+				var className = $(this).attr("class")+ "-tab"; 
+				$("." + className).css("width","100%");
+				
+				slideIn(className);
+			})
+
+			$(".go-back").click(function(){
+				$(this).parent().parent("div").css("width","0")
+			})
+
+			function slideIn(className){
+ 			$("." + className).css("width","100%");
+		}
+
+			$(".edit").click(function(){
+				var className = $(this).parent().parent().attr("class")+ "-name";
+				enable(className);
+			});
+
+			$(".check").click(function(){
+				var className = $(this).parent().parent().attr("class")+ "-name"
+
+				disable(className);
+			})
+
+
+			function enable(className){
+				var classCheck = "." +  className +" " + ".fa-check";
+				var classPen = "." +  className +" " + ".fa-pen";
+				var className = "." +  className +" " + ".form-control"
+ 				$(className).removeAttr("disabled");
+ 				$(classCheck).toggle();
+				$(classPen).toggle();
+			}
+
+			function disable(className){
+				var classCheck = "." +  className +" " + ".fa-check";
+				var classPen = "." +  className +" " + ".fa-pen";
+				var className = "." +  className +" " + ".form-control"
+ 				$(className).attr("disabled","disabled");
+ 				$(classPen).toggle();
+				$(classCheck).toggle();
+			}
+
+
+
+		});
+	</script>
+</head>
+<html>
+<div class="background-box">
+	<div class="top-empty">
+	</div>
+
+	<div class="bottom-empty">
+	</div>
+</div>
+<div class="container-fluid overlay-content">
+	<div class="container profile-details-chat-container">
+		<div class="row profile-details-chat">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 profile-details">
+				<div class="row profile-details-header">
+					<div class="profile-pic">
+						<img src="images/pp.jpeg" alt="Avatar" class="img-responsive">
+					</div>
+
+					<div class="profile-details-header-element">
+						<span class="status" data-toggle="tooltip" data-placement="bottom" title="status">
+						</span>
+						<span class="new-chat" data-toggle="tooltip" data-placement="bottom" title="New Chat" slideIn() ><i class="fas fa-comment-alt"></i></span>
+						<span class="menu dropdown-toggle" data-toggle="dropdown" role="button" >
+						</span>
+						<ul class="dropdown-menu">
+							<li><a href="#">New group</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Archived</a></li>
+						</ul>
+
+					</div>
+				</div>
+
+				<div class="row search-new-chat">
+					<input type="text" name="search-contact" class="form-control" placeholder=" Search or Start new chat">
+					<i class="fa fa-search"></i>
+				</div>
+
+				<div class="row chats">
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Ajay Krb </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Gabru</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">	
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">	
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">	
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content chat-hover">
+						<div class="profile-pic ">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">
+							<span> Xylon </span>
+							<span class="chat-time"> 3:38 AM</span>
+							<p class=latest-chat>Hi, How are you?shdfghsdfhdsfhsfds shdfghsdfhdsfhsfds</p>
+							<span class="chat-menu"><i class="fa fa-angle-down"></i></span>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div class="new-chat-tab slide-right">
+					<header>
+						<div class="go-back"><i class="fa fa-arrow-left"></i></div>
+						<div class="header-title">New Chat</div>
+					</header>
+
+					<div class=" search-new-chat">
+						<input type="text" name="search-contact" class="form-control" placeholder=" Search or Start new chat">
+						<i class="fa fa-search"></i>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<i class="fa fa-user-plus"></i>
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>New Chat</p>
+							<p></p>
+						</div>
+						<hr>
+					</div>
+
+					<h3 class="">Frequently Contacted</h3>
+					<hr>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+
+					<div class="chat-content new-group">
+						<div class="profile-pic new-group-icon">	
+							<img src="images/avatar.png" alt="Avatar" class="img-responsive">
+						</div>
+						<div class="chat-name">	
+							<p class=latest-chat>User 1</p>
+							<p class="user-status-text">Hey there! I am using WhatsApp </p>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div class=" profile-pic-tab slide-right">
+					<header>
+						<div class="go-back"><i class="fa fa-arrow-left"></i></div>
+						<div class="header-title">New Chat</div>
+					</header>
+					<div class="profile-pic-large">
+						<div class="profile-pic-img">
+							<img src="images/pp_large.jpeg" alt="Avatar" class="img-responsive">
+						</div>
+
+						<div class="user-name">
+							<div class="user-name-title">
+								Your Name
+							</div>
+							<div class="user-name-name">
+								<input type="text" name="name" class="form-control" disabled value="Xenio"><br>
+								<i class="fa fa-pen edit"></i>
+								<i class="fa fa-check check"></i>
+							</div>
+						</div>
+
+						<div class="note">
+							<span>This is not your username or pin. This name will be visible to your WhatsApp contacts.</span>
+						</div>
+
+						<div class="user-about">
+							<div class="user-name-title">
+								Your Name
+							</div>
+							<div class="user-about-name">
+								<input type="text" name="name" class="form-control" disabled value="About You"><br>
+								<i class="fa fa-pen edit"></i>
+								<i class="fa fa-check check"></i>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 profile-chat">
+				<div class="row profile-details-header">
+					<div class="profile-pic"></div>
+					<div class="open-chat-name">
+						Xylon
+					</div>
+					<div class="profile-details-header-element">
+						<span class="search-message">
+							<i class="fa fa-search"></i>
+						</span>
+						<span class="attachment"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
+						<div class="attachment-content">
+						</div>
+						<span class="menu dropdown-toggle" data-toggle="dropdown">
+						</span>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#">New group</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Archived</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row profile-chat-area">
+					
+					<div class="profile-chat-area-msg">
+						<div class="msg ">
+							<div class="msg-content-outer curr-user ">
+								<div class="msg-content chat-hover">
+									<div class="msg-text">Test dfdfvdfdfdfgdfgdf</div>
+									<div class="msg-smiley"></div>
+									<div class="msg-time">3:00 AM</div>
+									<div class="msg-sent"> <i class="fa fa-check"></i></div>
+									<div class="msg-dele"><i class="fa fa-check-double"></i></div>
+									<div class="down-arrow chat-menu dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">New group</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Archived</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="msg ">
+							<div class="msg-content-outer other-user chat-hover">
+								<div class="msg-content">
+									<div class="msg-text">Test dfdfvdfdfdfgdfgdf</div>
+									<div class="msg-smiley"></div>
+									<div class="msg-time">3:00 AM</div>
+									<div class="msg-sent"> <i class="fa fa-check"></i></div>
+									<div class="msg-dele"><i class="fa fa-check-double"></i></div>
+									<div class="down-arrow chat-menu dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">New group</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Archived</a></li>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="msg ">
+							<div class="msg-content-outer other-user chat-hover">
+								<div class="msg-content">
+									<div class="msg-text">Test dfdfvdfdfdfgdfgdf</div>
+									<div class="msg-smiley"></div>
+									<div class="msg-time">3:00 AM</div>
+									<div class="msg-sent"> <i class="fa fa-check"></i></div>
+									<div class="msg-dele"><i class="fa fa-check-double"></i></div>
+									<div class="down-arrow chat-menu dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">New group</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Archived</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+				<div class="row profile-chat-msg">
+					<div class="visible-inline-block"><i class="fa fa-smile"></i>
+					</div>
+
+					<div class="profile-chat-msg-textbox">
+						<input type="text" name="search-contact" class="form-control" placeholder="Type a message">
+					</div>
+
+					<div class="profile-chat-msg-mic">
+						<i class="fas fa-microphone"></i>
+					</div>
+				</div>	
+			</div> 
+		</div>
+
+	</div>
+
+</div>
+
+</html>
